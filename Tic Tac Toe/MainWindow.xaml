@@ -6,5 +6,15 @@
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid/>
+    <Grid>
+        <Button Content="" HorizontalAlignment="Left" Margin="221,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="0,0,1,1" ClipToBounds="True" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button HorizontalAlignment="Left" Margin="321,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,1,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,0,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,156,0,0" BorderThickness="0,1,1,1" SnapsToDevicePixels="True" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="321,156,0,0" VerticalAlignment="Top" Width="100" Height="98" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,156,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,254,0,0" BorderThickness="0,1,1,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="321,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,1,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+    </Grid>
 </Window>
