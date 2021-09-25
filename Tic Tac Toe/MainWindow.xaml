@@ -7,14 +7,18 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button Content="" HorizontalAlignment="Left" Margin="221,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="0,0,1,1" ClipToBounds="True" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button HorizontalAlignment="Left" Margin="321,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,1,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="421,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,0,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,156,0,0" BorderThickness="0,1,1,1" SnapsToDevicePixels="True" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="321,156,0,0" VerticalAlignment="Top" Width="100" Height="98" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="421,156,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,1" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,254,0,0" BorderThickness="0,1,1,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="321,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,1,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
-        <Button Content="" HorizontalAlignment="Left" Margin="421,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,0" Visibility="Visible" BorderBrush="Black" Foreground="White" Background="White"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="221,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="0,0,1,1" ClipToBounds="True" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox"/>
+        <Button HorizontalAlignment="Left" Margin="321,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,1,1" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox" Grid.Column="1"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,58,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,0,0,1" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox" Grid.Column="2"/>
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,156,0,0" BorderThickness="0,1,1,1" SnapsToDevicePixels="True" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox" Grid.Row="1"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="321,156,0,0" VerticalAlignment="Top" Width="100" Height="98" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox
+                " Grid.Row="1" Grid.Column="1"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,156,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,1" Visibility="Visible" BorderBrush="Black" Background="White" IsCancel="True" FontSize="72" Click="clickBox" Grid.Row="1" Grid.Column="2"/>
+        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Width="100" Height="98" Margin="221,254,0,0" BorderThickness="0,1,1,0" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox" Grid.Row="2"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="321,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,1,0" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox
+                " Grid.Row="2" Grid.Column="1"/>
+        <Button Content="" HorizontalAlignment="Left" Margin="421,254,0,0" VerticalAlignment="Top" Width="100" Height="98" BorderThickness="1,1,0,0" Visibility="Visible" BorderBrush="Black" Background="White" FontSize="72" Click="clickBox
+                " Grid.Row="2" Grid.Column="2"/>
+        <Label x:Name="playerLabel" Content="Player 1's Turn" HorizontalAlignment="Left" Margin="298,16,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Window>
