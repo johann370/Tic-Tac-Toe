@@ -24,6 +24,7 @@ namespace Tic_Tac_Toe
         string playerToMove;
         string[,] grid;
         int squaresLeft;
+        bool gameOver = false;
         public MainWindow()
         {
             InitializeComponent();
@@ -42,7 +43,7 @@ namespace Tic_Tac_Toe
         {
             Button button = sender as Button;
 
-            if (checkIfBoxEmpty(button))
+            if (checkIfBoxEmpty(button) && !gameOver)
             {
                 changeText(button, playerToMove);
                 squaresLeft--;
@@ -88,6 +89,7 @@ namespace Tic_Tac_Toe
                     drawLine("bottomLeftToTopRight");
                 }
             }
+            gameOver = true;
         }
 
         private void drawLine(string direction, int num = 0)
