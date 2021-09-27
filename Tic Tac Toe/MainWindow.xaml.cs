@@ -41,17 +41,34 @@ namespace Tic_Tac_Toe
         private void clickBox(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            changeText(button, playerToMove);
-            squaresLeft--;
-            updateGrid(button);
-            if (squaresLeft <= 5)
+
+            if (checkIfBoxEmpty(button))
             {
-                if (checkWin(button))
+                changeText(button, playerToMove);
+                squaresLeft--;
+                updateGrid(button);
+                if (squaresLeft <= 5)
                 {
-                    playerLabel.Content = $"{playerToMove} Wins";
+                    if (checkWin(button))
+                    {
+                        playerLabel.Content = $"{playerToMove} Wins";
+                    }
                 }
+                changePlayer();
             }
-            changePlayer();
+        }
+
+        private bool checkIfBoxEmpty(Button button)
+        {
+            int row = Grid.GetRow(button);
+            int col = Grid.GetColumn(button);
+
+            if(grid[row, col] == "")
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void updateGrid(Button button)
@@ -61,7 +78,7 @@ namespace Tic_Tac_Toe
             grid[row, col] = playerToMove == "Player 1" ? "X" : "O";
         }
 
-        private Boolean checkWin(Button button)
+        private bool checkWin(Button button)
         {
             int row = Grid.GetRow(button);
             int col = Grid.GetColumn(button);
@@ -83,7 +100,7 @@ namespace Tic_Tac_Toe
             return false;
         }
 
-        private Boolean checkDiagonal(int row, int col)
+        private bool checkDiagonal(int row, int col)
         {
             if (row - col == 0)
             {
@@ -103,7 +120,7 @@ namespace Tic_Tac_Toe
             return false;
         }
 
-        private Boolean checkCol(int col)
+        private bool checkCol(int col)
         {
             if (grid[0, col] == grid[1, col] && grid[1, col] == grid[2, col])
             {
@@ -113,7 +130,7 @@ namespace Tic_Tac_Toe
             return false;
         }
 
-        private Boolean checkRow(int row)
+        private bool checkRow(int row)
         {
             if (grid[row, 0] == grid[row, 1] && grid[row, 1] == grid[row, 2])
             {
