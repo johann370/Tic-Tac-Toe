@@ -27,7 +27,7 @@ namespace Tic_Tac_Toe
         public MainWindow()
         {
             InitializeComponent();
-            
+
             startGame();
         }
 
@@ -42,7 +42,85 @@ namespace Tic_Tac_Toe
         {
             Button button = sender as Button;
             changeText(button, playerToMove);
+            squaresLeft--;
+            updateGrid(button);
+            if (squaresLeft <= 5)
+            {
+                if (checkWin(button))
+                {
+                    playerLabel.Content = $"{playerToMove} Wins";
+                }
+            }
             changePlayer();
+        }
+
+        private void updateGrid(Button button)
+        {
+            int row = Grid.GetRow(button);
+            int col = Grid.GetColumn(button);
+            grid[row, col] = playerToMove == "Player 1" ? "X" : "O";
+        }
+
+        private Boolean checkWin(Button button)
+        {
+            int row = Grid.GetRow(button);
+            int col = Grid.GetColumn(button);
+            if (checkRow(row))
+            {
+                return true;
+            }
+            if (checkCol(col))
+            {
+                return true;
+            }
+            if (row - col != 1 && row - col != -1)
+            {
+                if (checkDiagonal(row, col))
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private Boolean checkDiagonal(int row, int col)
+        {
+            if (row - col == 0)
+            {
+                if (grid[0, 0] == grid[1, 1] && grid[1, 1] == grid[2, 2])
+                {
+                    return true;
+                }
+            }
+            else if (row - col == 2 || row - col == -2)
+            {
+                if (grid[2, 0] == grid[1, 1] && grid[1, 1] == grid[0, 2])
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private Boolean checkCol(int col)
+        {
+            if (grid[0, col] == grid[1, col] && grid[1, col] == grid[2, col])
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private Boolean checkRow(int row)
+        {
+            if (grid[row, 0] == grid[row, 1] && grid[row, 1] == grid[row, 2])
+            {
+                return true;
+            }
+
+            return false;
         }
 
         private void changePlayer()
@@ -59,7 +137,7 @@ namespace Tic_Tac_Toe
 
         private void changeText(Button button, string playerToMove)
         {
-            if(playerToMove == "Player 1")
+            if (playerToMove == "Player 1")
             {
                 button.Content = "X";
                 playerLabel.Content = "Player 2's Turn";
