@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Tic_Tac_Toe"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid VerticalAlignment="Center" HorizontalAlignment="Center">
+    <Grid x:Name="gameWindow" VerticalAlignment="Center" HorizontalAlignment="Center">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="100"/>
@@ -17,15 +17,15 @@
             <RowDefinition Height="100"/>
             <RowDefinition Height="100"/>
         </Grid.RowDefinitions>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,0,1,1" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,0,1,1" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,0,0,1" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,1,1,1" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,0,1" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,1,1,0" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,1,0" FontSize="72" FontWeight="Normal"/>
-        <Button Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,0,0" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_00" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,0,1,1" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_01" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,0,1,1" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_02" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="0" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,0,0,1" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_10" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,1,1,1" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_11" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_12" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,0,1" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_20" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="0" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="0,1,1,0" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_21" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="1" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,1,0" FontSize="72" FontWeight="Normal"/>
+        <Button x:Name="_22" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Grid.Column="2" Width="100" Height="100" BorderBrush="Black" Background="White" Click="clickBox" BorderThickness="1,1,0,0" FontSize="72" FontWeight="Normal"/>
         <Label x:Name="playerLabel" Content="Player 1's Turn" HorizontalAlignment="Left" Margin="61,-54,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold" Grid.ColumnSpan="3" Width="189"/>
 
 

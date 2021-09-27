@@ -51,10 +51,100 @@ namespace Tic_Tac_Toe
                 {
                     if (checkWin(button))
                     {
-                        playerLabel.Content = $"{playerToMove} Wins";
+                        endGame(button, playerToMove);
                     }
                 }
                 changePlayer();
+                if(squaresLeft == 0)
+                {
+                    endGame(button, "Tie");
+                }
+            }
+        }
+
+        private void endGame(Button button, String winner)
+        {
+            int row = Grid.GetRow(button);
+            int col = Grid.GetColumn(button);
+
+            playerLabel.Content = winner != "Tie" ? $"{winner} Wins" : "It's a tie";
+
+            if (checkRow(row))
+            {
+                drawLine("row", row);
+            }
+            else if (checkCol(col))
+            {
+                drawLine("column", col);
+            }
+            else if (checkDiagonals(row, col))
+            {
+                if (row - col == 0)
+                {
+                    drawLine("topLeftToBottomRight");
+                }
+                else
+                {
+                    drawLine("bottomLeftToTopRight");
+                }
+            }
+        }
+
+        private void drawLine(string direction, int num = 0)
+        {
+            if (direction == "row")
+            {
+                Rectangle line = new Rectangle();
+                line.Width = 300;
+                line.Height = 10;
+                line.Fill = Brushes.Black;
+                line.HorizontalAlignment = HorizontalAlignment.Left;
+                line.VerticalAlignment = VerticalAlignment.Center;
+                Grid.SetRow(line, num);
+                Grid.SetColumnSpan(line, 3);
+                gameWindow.Children.Add(line);
+            }
+            else if (direction == "column")
+            {
+                Rectangle line = new Rectangle();
+                line.Width = 10;
+                line.Height = 300;
+                line.Fill = Brushes.Black;
+                line.HorizontalAlignment = HorizontalAlignment.Center;
+                line.VerticalAlignment = VerticalAlignment.Center;
+                Grid.SetColumn(line, num);
+                Grid.SetRowSpan(line, 3);
+                gameWindow.Children.Add(line);
+            }
+            else if (direction == "topLeftToBottomRight")
+            {
+                Rectangle line = new Rectangle();
+                line.Width = 500;
+                line.Height = 10;
+                line.Fill = Brushes.Black;
+                line.HorizontalAlignment = HorizontalAlignment.Left;
+                line.VerticalAlignment = VerticalAlignment.Top;
+                line.RenderTransform = new SkewTransform(-45, 45);
+                Grid.SetRow(line, 0);
+                Grid.SetColumn(line, 0);
+                Grid.SetColumnSpan(line, 3);
+                Grid.SetRowSpan(line, 3);
+                gameWindow.Children.Add(line);
+            }
+            else if (direction == "bottomLeftToTopRight")
+            {
+                Rectangle line = new Rectangle();
+                line.Width = 500;
+                line.Height = 10;
+                line.Fill = Brushes.Black;
+                line.HorizontalAlignment = HorizontalAlignment.Left;
+                line.VerticalAlignment = VerticalAlignment.Bottom;
+                line.RenderTransform = new SkewTransform(45, -45);
+                Grid.SetRow(line, 2);
+                Grid.SetColumn(line, 0);
+                Grid.SetColumnSpan(line, 3);
+                Grid.SetRowSpan(line, 3);
+                gameWindow.Children.Add(line);
             }
         }
 
@@ -63,7 +153,7 @@ namespace Tic_Tac_Toe
             int row = Grid.GetRow(button);
             int col = Grid.GetColumn(button);
 
-            if(grid[row, col] == "")
+            if (grid[row, col] == "")
             {
                 return true;
             }
@@ -86,13 +176,13 @@ namespace Tic_Tac_Toe
             {
                 return true;
             }
-            if (checkCol(col))
+            else if (checkCol(col))
             {
                 return true;
             }
-            if (row - col != 1 && row - col != -1)
+            else if (row - col != 1 && row - col != -1)
             {
-                if (checkDiagonal(row, col))
+                if (checkDiagonals(row, col))
                 {
                     return true;
                 }
@@ -100,7 +190,7 @@ namespace Tic_Tac_Toe
             return false;
         }
 
-        private bool checkDiagonal(int row, int col)
+        private bool checkDiagonals(int row, int col)
         {
             if (row - col == 0)
             {
